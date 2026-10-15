@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица</title>
+</head>
+<body>
+    <h2>Поиск и фильтрация</h2>
+    <a href="Lab_1.html">Главная</a><br>
+    <a href="Lab_1_tab.html">Список различных книг</a>
+    <hr>
+
+    <details open>
+        <summary><b>График</b></summary>
+        <form>
+            <p><b>Значение по оси ОХ</b></p>
+            <label><input type="radio" name="axisX" value="genre" id="axisXgenre"> Жанр</label><br>
+            <label><input type="radio" name="axisX" value="country" id="axisXcountry"> Страна</label><br>
+            <label><input type="radio" name="axisX" value="year" id="axisXyear"> Год публикации</label><br>
+
+            <p><b>Значение по оси ОУ</b></p>
+            <label><input type="checkbox" name="axisY" value="maxPages" id="axisYmaxPages"> Максимальное количество страниц</label><br>
+            <label><input type="checkbox" name="axisY" value="minPages" id="axisYminPages"> Минимальное количество страниц</label><br>
+            <label><input type="checkbox" name="axisY" value="count" id="axisYcount"> Среднее количество страниц</label><br>
+
+            <br>
+            <button type="button" id="Graf">Построить</button>
+        </form>
+        <p>Здесь будет график</p>
+    </details>
+
+    <br>
+
+    <details open>
+        <summary><b>Фильтр</b></summary>
+        <form>
+            <label><p>Название: <input type="text" name="filterName" id="Namefilt"></p></label>
+            <label><p>Жанр: <input type="text" name="filterGenre" id="Genrefilt"></p></label>
+            <label><p>Автор: <input type="text" name="filterAuthor" id="Autorfilt"></p></label>
+            <label><p>Страна: <input type="text" name="filterCountry" id="Countryfilt"></p></label>
+            <label>
+                <p>
+                    Год публикации: от <input type="number" name="filterYearFrom" id="Yearmin" min="1980" max="2026">
+                    до <input type="number" name="filterYearTo" id="Yearmax" min="1980" max="2026">
+                </p>
+            </label>
+            <label>
+                <p>
+                    Страницы: от <input type="number" name="filterPagesFrom" id="Pagesmin" min="150" max="1500"></label>
+                    до <input type="number" name="filterPagesTo" id="Pagesmax" min="150" max="1500">
+                </p>
+            </label>
+            <button type="button" id="Filter">Найти</button>
+        </form>
+    </details>
+
+    <br>
+
+    <details open>
+        <summary><b>Сортировка</b></summary>
+        <form>
+            <p>
+                Первый уровень:
+                <label>
+                    <select name="sort1" id="Sort_1">
+                        <option value="none">Нет</option>
+                        <option value="name">Название</option>
+                        <option value="genre">Жанр</option>
+                        <option value="author">Автор</option>
+                        <option value="country">Страна</option>
+                        <option value="year">Год публикации</option>
+                        <option value="pages">Страницы</option>
+                    </select>
+                </label>    
+                по убыванию? <label><input type="checkbox" name="sort1Desc" id="Sort_1Y"></label>
+            </p>
+            <p>
+                Второй уровень:
+                <label>
+                    <select name="sort2" id="Sort_2">
+                        <option value="none">Нет</option>
+                        <option value="name">Название</option>
+                        <option value="genre">Жанр</option>
+                        <option value="author">Автор</option>
+                        <option value="country">Страна</option>
+                        <option value="year">Год публикации</option>
+                        <option value="pages">Страницы</option>
+                    </select>
+                </label>    
+                по убыванию? <label><input type="checkbox" name="sort2Desc" id="Sort_2Y"></label>
+            </p>
+            <p>
+                Третий уровень:
+                <label>
+                    <select name="sort3" id="Sort_3">
+                        <option value="none">Нет</option>
+                        <option value="name">Название</option>
+                        <option value="genre">Жанр</option>
+                        <option value="author">Автор</option>
+                        <option value="country">Страна</option>
+                        <option value="year">Год публикации</option>
+                        <option value="pages">Страницы</option>
+                    </select>
+                </label>
+                по убыванию? <label><input type="checkbox" name="sort3Desc" id="Sort_3Y"></label>
+            </p>
+            <button type="button">Сортировать</button>
+        </form>
+    </details>
+
+    <br>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Автор</th>
+                <th>Страна</th>
+                <th>Год публикации</th>
+                <th>Страницы</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Секрет Зимы</td>
+                <td>Янг-эдалт</td>
+                <td>Анна Бахтиярова</td>
+                <td>Россия</td>
+                <td>2011</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>Корона Весны</td>
+                <td>Янг-эдалт</td>
+                <td>Анна Бахтиярова</td>
+                <td>Россия</td>
+                <td>2012</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>Пророчество Лета</td>
+                <td>Янг-эдалт</td>
+                <td>Анна Бахтиярова</td>
+                <td>Россия</td>
+                <td>2018</td>
+                <td>377</td>
+            </tr>
+            <tr>
+                <td>Месть Осени</td>
+                <td>Янг-эдалт</td>
+                <td>Анна Бахтиярова</td>
+                <td>Россия</td>
+                <td>2019</td>
+                <td>356</td>
+            </tr>
+            <tr>
+                <td>Танец Времен Года</td>
+                <td>Янг-эдалт</td>
+                <td>Анна Бахтиярова</td>
+                <td>Россия</td>
+                <td>2019</td>
+                <td>328</td>
+            </tr>
+            <tr>
+                <td>Один из нас лжёт</td>
+                <td>Психологический триллер</td>
+                <td>Карен М. Макмаус</td>
+                <td>США</td>
+                <td>2017</td>
+                <td>352</td>
+            </tr>
+            <tr>
+                <td>Наследница драконов.Тайна</td>
+                <td>Фэнтези</td>
+                <td>Надежда Кузьмина</td>
+                <td>Россия</td>
+                <td>2011</td>
+                <td>476</td>
+            </tr>
+            <tr>
+                <td>Наследница драконов.Поиск</td>
+                <td>Фэнтези</td>
+                <td>Надежда Кузьмина</td>
+                <td>Россия</td>
+                <td>2011</td>
+                <td>413</td>
+            </tr>
+            <tr>
+                <td>Наследница драконов.Охота</td>
+                <td>Фэнтези</td>
+                <td>Надежда Кузьмина</td>
+                <td>Россия</td>
+                <td>2011</td>
+                <td>391</td>
+            </tr>
+            <tr>
+                <td>Наследница драконов.Добыча</td>
+                <td>Фэнтези</td>
+                <td>Надежда Кузьмина</td>
+                <td>Россия</td>
+                <td>2012</td>
+                <td>376</td>
+            </tr>
+            <tr>
+                <td>Благословение небожителей.Том 1</td>
+                <td>Сянься</td>
+                <td>Мосян Тунсю</td>
+                <td>Китай</td>
+                <td>2023</td>
+                <td>416</td>
+            </tr>
+            <tr>
+                <td>Лавр</td>
+                <td>Современная отечественная проза</td>
+                <td>Евгений Водолазкин</td>
+                <td>Россия</td>
+                <td>2021</td>
+                <td>448</td>
+            </tr>
+            <tr>
+                <td>Магистр дьявольского культа.Том 1</td>
+                <td>Сянься</td>
+                <td>Мосян Тунсю</td>
+                <td>Китай</td>
+                <td>2022</td>
+                <td>440</td>
+            </tr>
+            <tr>
+                <td>Девушка с татуировкой дракона</td>
+                <td>Детектив</td>
+                <td>Стиг Ларссон</td>
+                <td>Швеция</td>
+                <td>2005</td>
+                <td>672</td>
+            </tr>
+            <tr>
+                <td>Девушка, которая играла с огнём</td>
+                <td>Детектив</td>
+                <td>Стиг Ларссон</td>
+                <td>Швеция</td>
+                <td>2006</td>
+                <td>724</td>
+            </tr>
+            <tr>
+                <td>Взрывавшая воздушные замки</td>
+                <td>Детектив</td>
+                <td>Стиг Ларссон</td>
+                <td>Швеция</td>
+                <td>2007</td>
+                <td>772</td>
+            </tr>
+            <tr>
+                <td>Шантарам</td>
+                <td>Приключенческий</td>
+                <td>Грегори Дэвид Робертс</td>
+                <td>Австралия</td>
+                <td>2003</td>
+                <td>1100</td>
+            </tr>
+            <tr>
+                <td>Дорога</td>
+                <td>Постапокалипсис</td>
+                <td>Кормак Маккарти</td>
+                <td>США</td>
+                <td>2006</td>
+                <td>287</td>
+            </tr>
+            <tr>
+                <td>Ловец магических животных</td>
+                <td>Фэнтези</td>
+                <td>Валентина Елисеева</td>
+                <td>Россия</td>
+                <td>2022</td>
+                <td>203</td>
+            </tr>
+            <tr>
+                <td>Девушка, которую не помнят</td>
+                <td>Фэнтези</td>
+                <td>Валентина Елисеева</td>
+                <td>Россия</td>
+                <td>2020</td>
+                <td>234</td>
+            </tr>
+            <tr>
+                <td>Враг, который не забудет</td>
+                <td>Фэнтези</td>
+                <td>Валентина Елисеева</td>
+                <td>Россия</td>
+                <td>2020</td>
+                <td>347</td>
+            </tr>
+            <tr>
+                <td>Антисваха против василиска</td>
+                <td>Фэнтези</td>
+                <td>Валентина Елисеева</td>
+                <td>Россия</td>
+                <td>2022</td>
+                <td>407</td>
+            </tr>
+            <tr>
+                <td>Отель "Калифорния"</td>
+                <td>Фэнтези</td>
+                <td>Мира Вольная</td>
+                <td>Россия</td>
+                <td>2019</td>
+                <td>505</td>
+            </tr>
+            <tr>
+                <td>Я, мой убийца и Джек-потрошитель. Книга 1</td>
+                <td>Детектив</td>
+                <td>Нина Кавалли</td>
+                <td>Россия</td>
+                <td>2020</td>
+                <td>228</td>
+            </tr>
+            <tr>
+                <td>Я - Дочь Ледяного Короля</td>
+                <td>Попаданцы</td>
+                <td>Зозо Кат</td>
+                <td>Россия</td>
+                <td>2020</td>
+                <td>455</td>
+            </tr>
+            <tr>
+                <td>Ты жена мне, помнишь?</td>
+                <td>Попаданцы</td>
+                <td>Ольга Островская</td>
+                <td>Россия</td>
+                <td>2021</td>
+                <td>318</td>
+            </tr>
+            <tr>
+                <td>Жена по ошибке</td>
+                <td>Попаданцы</td>
+                <td>Алиса Ардова</td>
+                <td>Россия</td>
+                <td>2020</td>
+                <td>310</td>
+            </tr>
+            <tr>
+                <td>Милые кости</td>
+                <td>Психологический</td>
+                <td>Элис Сиболд</td>
+                <td>США</td>
+                <td>2002</td>
+                <td>328</td>
+            </tr>
+            <tr>
+                <td>Щегол</td>
+                <td>Исторический</td>
+                <td>Донна Тартт</td>
+                <td>США</td>
+                <td>2013</td>
+                <td>784</td>
+            </tr>
+            <tr>
+                <td>Клуб убийств по четвергам</td>
+                <td>Детектив</td>
+                <td>Ричард Осман</td>
+                <td>Великобритания</td>
+                <td>2020</td>
+                <td>368</td>
+            </tr>
+            <tr>
+                <td>Виноваты звёзды</td>
+                <td>Любовный</td>
+                <td>Джон Грин</td>
+                <td>США</td>
+                <td>2012</td>
+                <td>313</td>
+            </tr>
+            <tr>
+                <td>Нормальные люди</td>
+                <td>Психологический</td>
+                <td>Салли Руни</td>
+                <td>Ирландия</td>
+                <td>2018</td>
+                <td>273</td>
+            </tr>
+            <tr>
+                <td>Бегущий за ветром</td>
+                <td>Исторический</td>
+                <td>Халед Хоссейни</td>
+                <td>Афганистан</td>
+                <td>2003</td>
+                <td>371</td>
+            </tr>
+            <tr>
+                <td>Тысяча сияющих солнц</td>
+                <td>Исторический</td>
+                <td>Халед Хоссейни</td>
+                <td>Афганистан</td>
+                <td>2007</td>
+                <td>372</td>
+            </tr>
+            <tr>
+                <td>Сумерки</td>
+                <td>Фэнтези</td>
+                <td>Стефани Майер</td>
+                <td>США</td>
+                <td>2005</td>
+                <td>498</td>
+            </tr>
+            <tr>
+                <td>Голодные игры</td>
+                <td>Антиутопия</td>
+                <td>Сьюзен Коллинз</td>
+                <td>США</td>
+                <td>2008</td>
+                <td>374</td>
+            </tr>
+            <tr>
+                <td>Сердце Пармы</td>
+                <td>Исторический</td>
+                <td>Алексей Иванов</td>
+                <td>Россия</td>
+                <td>2003</td>
+                <td>640</td>
+            </tr>
+            <tr>
+                <td>Географ глобус пропил</td>
+                <td>Психологический</td>
+                <td>Алексей Иванов</td>
+                <td>Россия</td>
+                <td>1995</td>
+                <td>384</td>
+            </tr>
+            <tr>
+                <td>Лестница Якова</td>
+                <td>Семейная сага</td>
+                <td>Людмила Улицкая</td>
+                <td>Россия</td>
+                <td>2015</td>
+                <td>736</td>
+            </tr>
+            <tr>
+                <td>Обитель</td>
+                <td>Исторический</td>
+                <td>Захар Прилепин</td>
+                <td>Россия</td>
+                <td>2014</td>
+                <td>768</td>
+            </tr>
+            <tr>
+                <td>Авиатор</td>
+                <td>Исторический</td>
+                <td>Евгений Водолазкин</td>
+                <td>Россия</td>
+                <td>2016</td>
+                <td>352</td>
+            </tr>
+            <tr>
+                <td>Кысь</td>
+                <td>Антиутопия</td>
+                <td>Татьяна Толстая</td>
+                <td>Россия</td>
+                <td>2000</td>
+                <td>320</td>
+            </tr>
+            <tr>
+                <td>S.N.U.F.F.</td>
+                <td>Антиутопия</td>
+                <td>Виктор Пелевин</td>
+                <td>Россия</td>
+                <td>2011</td>
+                <td>320</td>
+            </tr>
+            <tr>
+                <td>iPhuck 10</td>
+                <td>Сатира</td>
+                <td>Виктор Пелевин</td>
+                <td>Россия</td>
+                <td>2017</td>
+                <td>320</td>
+            </tr>
+            <tr>
+                <td>Чапаев и Пустота</td>
+                <td>Постмодернизм</td>
+                <td>Виктор Пелевин</td>
+                <td>Россия</td>
+                <td>1996</td>
+                <td>384</td>
+            </tr>
+            <tr>
+                <td>Ночной цирк</td>
+                <td>Фэнтези</td>
+                <td>Эрин Моргенстерн</td>
+                <td>США</td>
+                <td>2011</td>
+                <td>512</td>
+            </tr>
+            <tr>
+                <td>Исчезнувшая</td>
+                <td>Триллер</td>
+                <td>Гиллиан Флинн</td>
+                <td>США</td>
+                <td>2012</td>
+                <td>432</td>
+            </tr>
+            <tr>
+                <td>Тень ветра</td>
+                <td>Исторический</td>
+                <td>Карлос Руис Сафон</td>
+                <td>Испания</td>
+                <td>2001</td>
+                <td>576</td>
+            </tr>
+            <tr>
+                <td>Девушка в поезде</td>
+                <td>Триллер</td>
+                <td>Пола Хокинс</td>
+                <td>Великобритания</td>
+                <td>2015</td>
+                <td>336</td>
+            </tr>
+            <tr>
+                <td>Маленькая жизнь</td>
+                <td>Психологический</td>
+                <td>Ханья Янагихара</td>
+                <td>США</td>
+                <td>2015</td>
+                <td>720</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <p align="center"><small>Выполнила: Горнак Т.Д. (Б9124-09.03.04(3))</small></p>
+</body>
+</html>
