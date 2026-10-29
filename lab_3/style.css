@@ -1,0 +1,216 @@
+body {
+ background-color: #f8f9fa;
+}
+header{
+ width: 80%;
+ margin: auto;
+ background-color: #ffffff;
+ border: 1px solid #e0e4ec; /* Тонкая серая рамка*/
+ border-radius: 12px; /* Скругленные углы */
+ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03); /* Легкая тень */
+ max-width: 1200px;
+}
+/* Контейнер для выравнивания элементов*/
+.navbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 14px 24px;
+}
+/* Заголовок */
+.navbar-title {
+ font-weight: bold;
+ color: #4a6b82;
+ letter-spacing: 0.05em;
+}
+/* Навигация */
+nav {
+ display: flex;
+ gap: 14px;
+}
+/* Базовый стиль для всех навигационных ссылок*/
+.nav-btn {
+ text-decoration: none;
+ padding: 8px 18px;
+ border-radius: 6px; /* Скругление кнопок */
+ color: #0288d1; /* Цвет для ссылок */
+}
+/* Стиль для активного пункта меню */
+.nav-btn.active {
+ background-color: #0288d1; /* Яркий синий фон */
+ color: #ffffff; /* Белый текст */
+ box-shadow: 0px 2px 4px rgba(2, 136, 209, 0.2); /* Свечение под кнопкой */
+}
+/* Эффект наведения на неактивную ссылку */
+.nav-btn:hover {
+ background-color: rgba(2, 136, 209, 0.06);
+}
+/* Сетка галереи */
+.gallery {
+  display: grid;
+  width: 80%;
+  max-width: 1200px;        
+  margin: 14px auto;         
+  gap: 10px;                
+  grid-template-columns: repeat(5, 1fr);
+}
+/* Элемент галереи */
+.gallery-item {
+ overflow: hidden;
+ border-radius: 8px; /* Скругление углов */
+ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Легкая тень */
+}
+/* Стилизация картинок внутри блоков */
+.gallery-item img {
+ display: block;
+ width: 100%;
+ height: 100%;
+ object-fit: cover; /* Картинка заполняет блок без искажения пропорций */
+}
+.gallery-item.tall {
+  grid-row: span 2;
+}
+/* Общая сетка для карточек */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;              
+  width: 80%;
+  max-width: 1200px;
+  margin: 14px auto;
+  gap: 14px;                       
+}
+.cards-grid .card {
+  flex: 0 1 calc(49%);     
+  background-color: #ffffff;
+  border: 1px solid #e0e4ec;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  height: 320px;                
+}
+/* Карточка */
+.card {
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid #e0e4ec;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  height: 320px;
+}
+
+/* Блок с картинкой  */
+.card-image-wrapper {
+  width: 25%;
+  flex-shrink: 0;
+  margin: 14px 14px 14px 14px;                          
+  position: relative;
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Контент карточки */
+.card-content {
+  width: 75%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.card-desc {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #555;
+  flex-grow: 0;
+}
+
+/* Кнопка */
+.btn-details {
+  align-self: flex-start; 
+  text-decoration: none;
+  padding: 8px 0px;
+  border-radius: 6px;
+  color: #0288d1;
+  font-weight: 500;
+}
+.card:nth-child(1) .btn-details,
+.card:nth-child(3) .btn-details {
+  align-self: flex-end; 
+  margin-left: auto;    
+}
+footer {
+    padding: 20px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*Адаптивность*/
+@media (max-width: 900px) {
+  /*Навигация */
+  .navbar {
+    flex-direction: column;           
+    align-items: center;             
+    gap: 14px;                        
+    padding: 14px;                    
+  }
+
+  nav {
+    width: 100%;                       
+    justify-content: center;          
+  }
+
+  .nav-btn {
+    display: inline-block;           
+  }
+
+
+  /*Галерея */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);  
+    width: 95%;                              
+  }
+
+  .gallery-item.tall {
+    grid-row: span 2;
+  }
+
+
+  /*Карточки */
+  .cards-grid .card {
+    flex: 1 1 calc(50%);       
+  }
+  .card {
+    flex-direction: row-reverse;   
+    height: auto;                    
+  }
+
+  .card-image-wrapper {
+    order: 1;                        
+    margin: 14px;                   
+  }
+
+  .card-content {
+    order: 2;                       
+    width: auto;                    
+    padding: 16px;
+    justify-content: space-between;  
+  }
+
+  .btn-details {
+    align-self: flex-end;
+    margin-left: auto;                  
+  }
+}
